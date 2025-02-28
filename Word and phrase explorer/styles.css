@@ -1,0 +1,212 @@
+body {
+    font-family: 'Vazir', sans-serif;
+    text-align: center;
+    padding: 50px;
+    margin: 0;
+    min-height: 100vh;
+    transition: background 0.3s, color 0.3s;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.container {
+    background: var(--bg-container);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hidden { display: none; }
+
+input, button {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    font-family: 'Vazir', sans-serif;
+    width: 80%;
+    max-width: 400px;
+    background: var(--input-bg);
+    color: var(--text-color);
+    box-sizing: border-box;
+}
+
+button {
+    background-color: var(--button-bg);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover { background-color: var(--button-hover); }
+
+#apiStatus, #resultMessage, #phraseResultMessage {
+    color: var(--secondary-text);
+    font-size: 1.1em;
+}
+
+#apiKeyDisplay {
+    color: #e74c3c;
+    font-weight: bold;
+    word-break: break-all;
+}
+
+#resultSection, #phraseResultSection {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.result-box {
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    width: 30%;
+    min-width: 200px;
+    margin: 10px 0;
+    color: var(--text-color);
+}
+
+.result-box h3 {
+    margin-top: 0;
+    color: var(--text-color);
+}
+
+#themeToggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: auto;
+    padding: 8px 15px;
+}
+
+#guideButton {
+    background-color: #2ecc71;
+    width: auto;
+    padding: 8px 15px;
+}
+
+#guideButton:hover { background-color: #27ae60; }
+
+#toggleMode {
+    background-color: #f39c12;
+    width: auto;
+    padding: 8px 15px;
+}
+
+#toggleMode:hover { background-color: #e67e22; }
+
+/* استایل مودال */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--bg-container);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    color: var(--text-color);
+    line-height: 1.6;
+    text-align: right;
+}
+
+.modal-content h2 {
+    color: var(--text-color);
+    font-size: 1.8em;
+    margin-top: 0;
+}
+
+.modal-content a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.modal-content a:hover {
+    text-decoration: underline;
+}
+
+.close-button {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #e74c3c;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    font-size: 0.9em;
+}
+
+/* تم روز (پیش‌فرض مرورگر) */
+@media (prefers-color-scheme: light) {
+    body { background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); color: #2c3e50; }
+    :root {
+        --bg-container: white;
+        --text-color: #333;
+        --secondary-text: #7f8c8d;
+        --border-color: #ddd;
+        --button-bg: #3498db;
+        --button-hover: #2980b9;
+        --input-bg: #fff;
+    }
+}
+
+/* تم شب (پیش‌فرض مرورگر) */
+@media (prefers-color-scheme: dark) {
+    body { background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%); color: #ecf0f1; }
+    :root {
+        --bg-container: #34495e;
+        --text-color: #ecf0f1;
+        --secondary-text: #bdc3c7;
+        --border-color: #576574;
+        --button-bg: #e74c3c;
+        --button-hover: #c0392b;
+        --input-bg: #2c3e50;
+    }
+}
+
+/* کلاس‌های تم دستی */
+.light-theme { background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); color: #2c3e50; }
+.light-theme .container { background: white; }
+.light-theme input { background: #fff; color: #2c3e50; border-color: #ddd; }
+.light-theme button { background-color: #3498db; }
+.light-theme button:hover { background-color: #2980b9; }
+.light-theme #apiStatus, .light-theme #resultMessage, .light-theme #phraseResultMessage { color: #7f8c8d; }
+.light-theme #guideButton { background-color: #2ecc71; }
+.light-theme #guideButton:hover { background-color: #27ae60; }
+
+.dark-theme { background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%); color: #ecf0f1; }
+.dark-theme .container { background: #34495e; }
+.dark-theme input { background: #2c3e50; color: #ecf0f1; border-color: #576574; }
+.dark-theme button { background-color: #e74c3c; }
+.dark-theme button:hover { background-color: #c0392b; }
+.dark-theme #apiStatus, .dark-theme #resultMessage, .dark-theme #phraseResultMessage { color: #bdc3c7; }
+.dark-theme #guideButton { background-color: #27ae60; }
+.dark-theme #guideButton:hover { background-color: #219653; }
+
+/* Media Query برای موبایل */
+@media (max-width: 768px) {
+    .result-box { width: 100%; }
+}

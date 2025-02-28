@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کاوشگر کلمات و عبارات</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vazir-font@latest/dist/font-face.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button id="themeToggle" onclick="toggleTheme()">تغییر تم</button>
+    <div class="container">
+        <h1>کاوشگر کلمات و عبارات</h1>
+        <div id="apiSection">
+            <button id="guideButton" onclick="openGuide()">راهنمای دریافت API Key</button>
+            <input type="text" id="apiKey" placeholder="کلید API خود را وارد کنید">
+            <button onclick="saveApiKey()">ثبت کلید</button>
+            <p id="apiStatus"></p>
+        </div>
+        <div id="apiSavedSection" class="hidden">
+            <p>کلید ثبت‌شده: <span id="apiKeyDisplay"></span></p>
+            <button onclick="changeApiKey()">تغییر کلید</button>
+            <button id="toggleMode" onclick="toggleMode()">معانی بیت/عبارت</button>
+        </div>
+        <div id="wordSection" class="hidden">
+            <input type="text" id="wordInput" placeholder="یک کلمه وارد کنید">
+            <button onclick="exploreWord()">کاوش</button>
+            <p id="resultMessage" class="hidden">در حال پردازش...</p>
+            <div id="resultSection" class="hidden">
+                <div class="result-box">
+                    <h3>معانی</h3>
+                    <ul id="meanings"></ul>
+                </div>
+                <div class="result-box">
+                    <h3>متضادها</h3>
+                    <ul id="antonyms"></ul>
+                </div>
+                <div class="result-box">
+                    <h3>هم‌خانواده</h3>
+                    <ul id="related"></ul>
+                </div>
+            </div>
+        </div>
+        <div id="phraseSection" class="hidden">
+            <input type="text" id="phraseInput" placeholder="یک بیت یا عبارت وارد کنید">
+            <button onclick="explorePhrase()">کاوش</button>
+            <p id="phraseResultMessage" class="hidden">در حال پردازش...</p>
+            <div id="phraseResultSection" class="hidden">
+                <div class="result-box" style="width: 100%;">
+                    <h3>معنی</h3>
+                    <p id="phraseMeaning"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- مودال راهنما -->
+    <div id="guideModal" class="modal">
+        <div class="modal-content">
+            <h2>راهنمای دریافت API Key از Google AI Studio</h2>
+            <b> توجه : api دستیار هوش مصنوعی ایران رو تحریم کرده برای استفاده از DNS یا VPN استفاده کنید </b>
+            <p>برای استفاده از این ابزار، نیاز به یک کلید API از Google دارید. مراحل زیر را دنبال کنید:</p>
+            <ol>
+                <li>به سایت <a href="https://aistudio.google.com/apikey" target="_blank">Google AI Studio</a> بروید.</li>
+                <li>اگر حساب گوگل ندارید، یک حساب بسازید یا با حساب موجود وارد شوید.</li>
+                <li>پس از ورود، روی دکمه "Create API Key" یا "ساخت کلید API" کلیک کنید.</li>
+                <li>کلید API که برایتان ساخته می‌شود را کپی کنید (یک رشته بلند از حروف و اعداد).</li>
+                <li>به این صفحه برگردید، کلید را در باکس "کلید API" وارد کنید و "ثبت کلید" را بزنید.</li>
+            </ol>
+            <p>&nbsp;</p>
+            <button class="close-button" onclick="closeGuide()">بستن</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
