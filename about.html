@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>درباره من - AliDeveloop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- اضافه کردن فونت Vazirmatn -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap');
+    </style>
+    <!-- اضافه کردن Font Awesome برای آیکون‌ها -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- هدر -->
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="navbar-nav ms-auto">
+                        <a class="nav-link vazirmatn-custom" href="index.html">صفحه اصلی</a>
+                        <a class="nav-link vazirmatn-custom" href="projects.html">پروژه‌ها</a>
+                        <a class="nav-link vazirmatn-custom" href="certificates.html">سرتیفیکت‌ها</a>
+                        <a class="nav-link active vazirmatn-custom" href="about.html">درباره من</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- محتوای اصلی -->
+    <main class="mt-5 pt-5">
+        <section class="about bg-white py-5" style="min-height: 80vh;"> <!-- بک‌گراند بزرگ و سفید با ارتفاع حداقل 80vh -->
+            <div class="container py-4">
+                <div class="section-header">
+                    <span class="line"></span>
+                    <h2 class="vazirmatn-custom">درباره من <span class="arrow">→</span></h2>
+                </div>
+                <div class="about-content text-center">
+                    <p class="vazirmatn-custom typing-static" id="aboutText">من علی هستم، توسعه‌دهنده وب با علاقه به طراحی و برنامه‌نویسی. این سایت رو برای نمایش مهارت‌ها و پروژه‌هام ساختم.</p>
+                    <div class="social-icons mt-3">
+                        <a href="https://www.linkedin.com/in/alizekrian" class="vazirmatn-custom"><i class="fab fa-linkedin"></i></a> <!-- آیکون لینکدین -->
+                        <span class="vazirmatn-custom">|</span>
+                        <a href="https://github.com/AliDeveloop" class="vazirmatn-custom"><i class="fab fa-github"></i></a> <!-- آیکون گیت‌هاب -->
+                        <span class="vazirmatn-custom">|</span>
+                        <a href="https://x.com/AliDeveloop" class="vazirmatn-custom"><i class="fab fa-twitter"></i></a> <!-- آیکون توییتر -->
+                        <span class="vazirmatn-custom">|</span>
+                        <a href="https://instagram.com/alideveloop" class="vazirmatn-custom"><i class="fab fa-instagram"></i></a> <!-- آیکون اینستاگرام -->
+                        <span class="vazirmatn-custom">|</span>
+                        <a href="https://T.me/alideveloop" class="vazirmatn-custom"><i class="fab fa-telegram"></i></a> <!-- آیکون تلگرام -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- فوتر -->
+    <footer class="bg-footer text-white text-center py-3 mt-5">
+        <p class="vazirmatn-custom">تمامی حقوق محفوظ است © 2025</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // انیمیشن تایپ ثابت برای بخش درباره من (بدون پاک شدن)
+const aboutText = `من <strong>علی</strong> هستم، ۲۱ سالمه و دانشجوی مهندسی نرم‌افزارم. از همون اول به دنیای برنامه‌نویسی و تکنولوژی علاقه داشتم و الان به‌عنوان یه توسعه‌دهنده وب، با <strong>PHP، MySQL، JavaScript، HTML و CSS</strong> کار می‌کنم. همیشه دنبال ساخت پروژه‌های کاربردی و خلاقانه‌ام که به درد بخورن و چیزی به تجربه‌م اضافه کنن.
+
+توی مسیر یادگیری و پیشرفت، روی پروژه‌های مختلفی کار کردم، از <strong>ژورنال معاملاتی تحت وب</strong> گرفته تا <strong>ربات تلگرام، سیستم‌های رمزنگاری و افزونه‌های مرورگر</strong>. امنیت اطلاعات و رمزنگاری هم برام جذابه و سعی می‌کنم توی این حوزه بیشتر یاد بگیرم.
+
+کلاً حل چالش‌های فنی و پیدا کردن راه‌حل‌های خلاقانه برام لذت‌بخشه. اگه دوست داری همکاری کنیم یا ایده‌ای برای پروژه داری، خوشحال می‌شم در ارتباط باشیم! 🚀`;
+
+let charIndex = 0;
+const aboutElement = document.getElementById('aboutText');
+
+function typeAbout() {
+    if (charIndex < aboutText.length) {
+        aboutElement.innerHTML += aboutText.charAt(charIndex); // استفاده از innerHTML به جای textContent برای پشتیبانی از تگ‌های HTML
+        charIndex++;
+        setTimeout(typeAbout, 50); // سرعت تایپ آهسته‌تر
+    }
+}
+
+window.onload = typeAbout;
+    </script>
+</body>
+</html>

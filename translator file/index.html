@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مترجم فایل متنی</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vazir-font@latest/dist/font-face.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+</head>
+<body>
+    <button id="themeToggle" onclick="toggleTheme()">تغییر تم</button>
+    <div class="container">
+        <h1>مترجم فایل متنی</h1>
+        <div id="apiSection">
+            <button id="guideButton" onclick="openGuide()">راهنمای دریافت API Key</button>
+            <input type="text" id="apiKey" placeholder="کلید API خود را وارد کنید">
+            <button onclick="saveApiKey()">ثبت کلید</button>
+            <p id="apiStatus"></p>
+        </div>
+        <div id="apiSavedSection" class="hidden">
+            <p>کلید ثبت‌شده: <span id="apiKeyDisplay"></span></p>
+            <button onclick="changeApiKey()">تغییر کلید</button>
+        </div>
+        <div id="uploadSection" class="hidden">
+            <select id="languageSelect">
+                <option value="fa">فارسی</option>
+                <option value="en">انگلیسی</option>
+                <option value="es">اسپانیایی</option>
+                <option value="fr">فرانسوی</option>
+            </select>
+            <input type="file" id="fileInput" accept=".txt,.pdf,.docx">
+            <button onclick="uploadFile()">آپلود و ترجمه</button>
+            <p id="processingMessage" class="hidden">متن شما در حال پردازش است. این کار مدتی زمان می‌برد. سایت را نبندید و رفرش نکنید.</p>
+        </div>
+    </div>
+    <div id="guideModal" class="modal">
+        <div class="modal-content">
+            <h2>راهنمای دریافت API Key از Google AI Studio</h2>
+            <p>برای استفاده از این مترجم، نیاز به یک کلید API از Google دارید. مراحل زیر رو دنبال کنید:</p>
+            <ol>
+                <li>به سایت <a href="https://aistudio.google.com/apikey" target="_blank">Google AI Studio</a> برید.</li>
+                <li>اگه حساب گوگل ندارید، یه حساب بسازید یا با حساب موجودتون وارد بشید.</li>
+                <li>بعد از ورود، روی دکمه‌ی "Create API Key" یا "ساخت کلید API" کلیک کنید.</li>
+                <li>کلید API که براتون ساخته میشه رو کپی کنید (یه رشته بلند از حروف و اعداده).</li>
+                <li>برگردید به صفحه‌ی مترجم، کلید رو توی باکس "کلید API" وارد کنید و "ثبت کلید" رو بزنید.</li>
+            </ol>
+            <p>&nbsp;</p>
+            <button class="close-button" onclick="closeGuide()">بستن</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

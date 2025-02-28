@@ -1,0 +1,350 @@
+body {
+    font-family: Arial, Helvetica, sans-serif; /* فونت پیش‌فرض برای متن‌های انگلیسی */
+    direction: rtl;
+    overflow-x: hidden;
+    background: #000; /* بک‌گراند کل صفحه مشکی (در صورت نیاز) */
+    color: #fff; /* رنگ پیش‌فرض متن سفید */
+}
+
+.vazirmatn-custom {
+    font-family: "Vazirmatn", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+header {
+    background: #000; /* بک‌گراند هدر مشکی */
+}
+
+.navbar {
+    box-shadow: none; /* حذف سایه هدر */
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    padding: 10px 15px;
+    color: #fff; /* متن لینک‌ها سفید */
+}
+
+.navbar-nav .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 15px;
+    width: 50%;
+    height: 3px;
+    background: #007bff; /* خط آبی زیر لینک فعال */
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #000; /* بک‌گراند بخش هیرو مشکی */
+}
+
+.typewriter {
+    font-family: 'Courier New', monospace; /* فونت ماشین‌تحریری برای "AliDeveloop" */
+    font-size: 4rem;
+    font-weight: bold;
+    color: #fff; /* متن سفید */
+}
+
+.typing-animation {
+    font-size: 1.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #fff; /* متن انیمیشن تایپ سفید */
+}
+
+/* اطمینان از اینکه متن‌های انگلیسی فونت پیش‌فرض مرورگر (مثل Arial یا Helvetica) داشته باشن */
+:lang(en) {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.section-header {
+    margin-bottom: 15px; /* کاهش مارجین در موبایل */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.line {
+    width: 40px; /* کاهش عرض خط */
+    height: 2px;
+    background: #d3d3d3; /* خاکستری روشن */
+}
+
+.arrow {
+    margin-right: 5px;
+    font-size: 1rem; /* کاهش سایز پیکان */
+}
+
+.projects {
+    background: #000; /* بک‌گراند مشکی برای پروژه‌ها */
+    color: #fff; /* رنگ متن سفید برای پروژه‌ها */
+}
+
+.projects .card {
+    background: #fff;
+    color: #000;
+    padding: 15px; /* کاهش پدینگ در کارت‌ها */
+    transform: translateZ(10px); /* کاهش عمق سه‌بعدی */
+    transition: all 0.3s;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* سایه ملایم‌تر برای موبایل */
+    border-radius: 8px; /* گوشه‌های گرد برای کارت‌ها */
+    border: solid 1px white;
+}
+
+.projects .card-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0; /* گوشه‌های گرد فقط برای بالای عکس */
+}
+
+.projects .card img {
+    max-width: 100%;
+    margin-bottom: 5px; /* کاهش مارجین پایین عکس */
+}
+
+.projects .card:hover {
+    background: #000;
+    color: #fff;
+    transform: translateZ(15px); /* کاهش عمق در حالت هاور */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* سایه بیشتر در حالت هاور */
+}
+
+.bg-certificates {
+    background: #000; /* بک‌گراند مشکی برای سرتیفیکت‌ها */
+    padding-bottom: 40px; /* فاصله بیشتر در پایین بخش سرتیفیکت‌ها */
+}
+
+.certificates .card {
+    background: #fff;
+    color: #000;
+    padding: 15px; /* کاهش پدینگ در کارت‌ها */
+    transition: all 0.3s;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* سایه ملایم‌تر برای موبایل */
+    border-radius: 8px; /* گوشه‌های گرد برای کارت‌ها */
+}
+
+.certificates .card-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0; /* گوشه‌های گرد فقط برای بالای عکس */
+}
+
+.certificates .card img {
+    max-width: 100%;
+    margin-bottom: 5px; /* کاهش مارجین پایین عکس */
+}
+
+.certificates .card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* سایه بیشتر در حالت هاور */
+    transform: translateY(-3px); /* کاهش جابه‌جایی در حالت هاور */
+}
+
+.show-more {
+    display: block;
+    text-align: center;
+    margin-top: 15px; /* کاهش مارجین بالا */
+    color: #007bff;
+    font-size: 0.9rem; /* کاهش سایز فونت لینک نمایش بیشتر */
+}
+
+.bg-footer {
+    background: #1a1a1a; /* بک‌گراند خاکستری تیره‌تر برای فوتر (متفاوت از سرتیفیکت‌ها) */
+    margin-top: 20px; /* فاصله بین فوتر و بخش سرتیفیکت‌ها */
+}
+
+.about {
+    background: #fff; /* بک‌گراند سفید برای بخش درباره من */
+    color: #000; /* رنگ متن مشکی برای درباره من */
+}
+
+.about .typing-static {
+    font-size: 1.2rem; /* سایز فونت متن درباره من */
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.social-icons a {
+    color: #007bff; /* رنگ لینک‌های شبکه‌های اجتماعی */
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-title {
+    margin: 0;
+    color: #000; /* عنوان مودال مشکی */
+}
+
+/* تنظیمات ریسپانسیو برای گوشی‌ها (max-width: 768px) */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 40vh; /* کاهش بیشتر ارتفاع بخش هیرو در موبایل */
+        padding: 20px 0; /* پدینگ برای بالا و پایین */
+    }
+
+    .typewriter {
+        font-size: 2.5rem; /* کاهش سایز فونت "AliDeveloop" */
+    }
+
+    .typing-animation {
+        font-size: 1rem; /* کاهش سایز فونت انیمیشن تایپ */
+    }
+
+    .projects .card, .certificates .card {
+        margin-bottom: 10px; /* کاهش فاصله بین کارت‌ها */
+        padding: 10px; /* کاهش پدینگ کارت‌ها */
+    }
+
+    .row > [class*="col-"] {
+        flex: 0 0 100%; /* هر کارت در موبایل 100% عرض داشته باشه */
+        max-width: 100%; /* حداکثر عرض کارت‌ها */
+    }
+
+    .navbar-brand, .navbar-nav {
+        text-align: center; /* مرکز کردن متن منو در موبایل */
+    }
+
+    .navbar-nav .nav-link {
+        padding: 8px 15px; /* کاهش پدینگ لینک‌ها در موبایل */
+        font-size: 0.9rem; /* کاهش سایز فونت لینک‌ها */
+    }
+
+    .section-header {
+        flex-direction: column; /* چیدمان عمودی برای هدر بخش‌ها */
+        text-align: center;
+        margin-bottom: 10px; /* کاهش مارجین پایین */
+    }
+
+    .section-header h2 {
+        font-size: 1.2rem; /* کاهش سایز فونت تیتر بخش‌ها */
+    }
+
+    .line {
+        width: 20px; /* کاهش بیشتر عرض خط */
+    }
+
+    .arrow {
+        font-size: 0.8rem; /* کاهش سایز پیکان */
+    }
+
+    .bg-certificates {
+        padding-bottom: 30px; /* کاهش پدینگ پایین بخش سرتیفیکت‌ها */
+    }
+
+    .show-more {
+        font-size: 0.8rem; /* کاهش بیشتر سایز فونت لینک نمایش بیشتر */
+        margin-top: 10px; /* کاهش مارجین بالا */
+    }
+
+    .bg-footer {
+        margin-top: 15px; /* کاهش مارجین بالا فوتر */
+        padding: 10px 0; /* کاهش پدینگ فوتر */
+    }
+
+    .bg-footer p {
+        font-size: 0.9rem; /* کاهش سایز فونت متن فوتر */
+    }
+
+    .about .typing-static {
+        font-size: 1rem; /* کاهش سایز فونت متن درباره من در موبایل */
+    }
+
+    .social-icons a {
+        font-size: 0.9rem; /* کاهش سایز فونت لینک‌های شبکه‌های اجتماعی */
+        margin: 0 3px; /* کاهش مارجین بین لینک‌ها */
+    }
+}
+/* ... (بقیه کدهای قبلی حفظ می‌شوند) ... */
+
+/* ... (بقیه کدهای قبلی حفظ می‌شوند) ... */
+
+.about {
+    background: #fff; /* بک‌گراند سفید برای بخش درباره من */
+    color: #000; /* رنگ متن مشکی برای درباره من */
+    min-height: 80vh; /* حداقل ارتفاع برای فضای بزرگتر */
+}
+
+.about .typing-static {
+    font-size: 1.2rem; /* سایز فونت متن درباره من */
+    /* حذف white-space: nowrap; */
+    overflow: hidden; /* فقط برای انیمیشن */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* فاصله بین آیکون‌ها */
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 1.5rem; /* اندازه آیکون‌ها */
+}
+
+/* رنگ‌های خاص برای هر آیکون شبکه اجتماعی */
+.social-icons .fab.fa-linkedin {
+    color: #0e76a8; /* رنگ آبی لینکدین */
+}
+
+.social-icons .fab.fa-github {
+    color: #333; /* رنگ خاکستری گیت‌هاب */
+}
+
+.social-icons .fab.fa-twitter {
+    color: #1DA1F2; /* رنگ آبی روشن توییتر */
+}
+
+.social-icons .fab.fa-instagram {
+    color: #E4405F; /* رنگ بنفش/نارنجی اینستاگرام */
+}
+
+.social-icons .fab.fa-telegram {
+    color: #0088cc; /* رنگ آبی تلگرام */
+}
+
+.social-icons span {
+    color: #007bff; /* رنگ خط جداکننده (می‌تونی تغییر بدی) */
+}
+
+/* تنظیمات ریسپانسیو برای گوشی‌ها (max-width: 768px) */
+@media (max-width: 768px) {
+    .about {
+        min-height: 60vh; /* کاهش ارتفاع در موبایل */
+        padding: 20px 0; /* پدینگ برای بالا و پایین */
+    }
+
+    .about .typing-static {
+        font-size: 1rem; /* کاهش سایز فونت متن درباره من در موبایل */
+    }
+
+    .social-icons a {
+        font-size: 1.2rem; /* کاهش سایز آیکون‌ها در موبایل */
+    }
+
+    .social-icons span {
+        font-size: 0.8rem; /* کاهش سایز خط جداکننده در موبایل */
+    }
+}
+.lin{
+    cursor:pointer;
+    text-decoration: none;
+}
