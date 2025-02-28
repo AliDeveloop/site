@@ -274,18 +274,21 @@ header {
 }
 /* ... (بقیه کدهای قبلی حفظ می‌شوند) ... */
 
-/* ... (بقیه کدهای قبلی حفظ می‌شوند) ... */
-
 .about {
     background: #fff; /* بک‌گراند سفید برای بخش درباره من */
     color: #000; /* رنگ متن مشکی برای درباره من */
     min-height: 80vh; /* حداقل ارتفاع برای فضای بزرگتر */
 }
 
-.about .typing-static {
+.about .about-content {
     font-size: 1.2rem; /* سایز فونت متن درباره من */
-    /* حذف white-space: nowrap; */
-    overflow: hidden; /* فقط برای انیمیشن */
+    word-wrap: break-word; /* اجازه شکستن کلمات بلند */
+    overflow-wrap: break-word; /* پشتیبانی بهتر برای شکستن کلمات */
+    max-width: 100%; /* افزایش عرض باکس متن به 100% برای فضای بیشتر */
+    margin: 0 auto; /* مرکز کردن متن */
+    padding: 20px; /* اضافه کردن پدینگ برای فضای بیشتر داخل باکس */
+    direction: rtl; /* اطمینان از جهت راست به چپ برای متن */
+    text-align: right; /* چیدمان متن از راست به چپ */
 }
 
 .social-icons {
@@ -332,8 +335,10 @@ header {
         padding: 20px 0; /* پدینگ برای بالا و پایین */
     }
 
-    .about .typing-static {
+    .about .about-content {
         font-size: 1rem; /* کاهش سایز فونت متن درباره من در موبایل */
+        max-width: 100%; /* حفظ عرض کامل در موبایل */
+        padding: 10px; /* کاهش پدینگ در موبایل */
     }
 
     .social-icons a {
@@ -347,4 +352,7 @@ header {
 .lin{
     cursor:pointer;
     text-decoration: none;
+}
+.black{
+    color: #000;
 }

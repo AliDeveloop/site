@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مترجم فایل متنی</title>
+    <title>مترجم زیرنویس فیلم</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vazir-font@latest/dist/font-face.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <button id="themeToggle" onclick="toggleTheme()">تغییر تم</button>
     <div class="container">
-        <h1>مترجم فایل متنی</h1>
+        <h1>مترجم زیرنویس فیلم</h1>
         <div id="apiSection">
             <button id="guideButton" onclick="openGuide()">راهنمای دریافت API Key</button>
             <input type="text" id="apiKey" placeholder="کلید API خود را وارد کنید">
@@ -30,11 +28,13 @@
                 <option value="es">اسپانیایی</option>
                 <option value="fr">فرانسوی</option>
             </select>
-            <input type="file" id="fileInput" accept=".txt,.pdf,.docx">
+            <input type="file" id="fileInput" accept=".srt">
             <button onclick="uploadFile()">آپلود و ترجمه</button>
-            <p id="processingMessage" class="hidden">متن شما در حال پردازش است. این کار مدتی زمان می‌برد. سایت را نبندید و رفرش نکنید.</p>
+            <p id="processingMessage" class="hidden">در حال ترجمه فایل هستیم این کار بکم طول میکشه. صفحه رو نبندش و رفرش نکن اماده شه خودکار دانلود میشه برات</p>
+            <p id="timer" class="hidden"></p>
         </div>
     </div>
+
     <div id="guideModal" class="modal">
         <div class="modal-content">
             <h2>راهنمای دریافت API Key از Google AI Studio</h2>
@@ -51,6 +51,7 @@
             <button class="close-button" onclick="closeGuide()">بستن</button>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
